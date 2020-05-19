@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlms:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Agregar un estudiante</title>
+</head>
+
+<body>
+	<h1>Ingresa un estudiante</h1>
+	<form th:action="@{/formEstudiante}" th:object="${estudiante}" method="post">		
+		
+		<label>Nombre del estudiante:</label>
+		<input type="text" th:field="${estudiante.nombre}" placeholder="Ingrese nombre del estudiante"><br>
+		<span th:errors="${estudiante.nombre}" style="color:red"></span><br>
+		
+		<label>Apellido del estudiante:</label>
+		<input type="text" th:field="${estudiante.apellido}" id="apellido" placeholder="Ingrese apellido del estudiante"><br>
+		<span th:errors="${estudiante.apellido}" style="color:red"></span><br>
+		
+		<label>Carnet del estudiante:</label>
+		<input type="number" th:field="${estudiante.carne}" placeholder="Ingrese el carnet del estudiante"><br>
+		<span th:errors="${estudiante.carne}" style="color:red"></span><br>
+		
+		<label>Carrera del estudiante:</label>
+		<input type="text" th:field="${estudiante.carrera}" placeholder="Ingresar carrera de estudiante"><br>
+		<span th:errors="${estudiante.carrera}" style="color:red"></span><br>
+		
+		<input type="submit" value="Agregar Alumno"/>
+		<a href="/listado" type="buttom">Listado de Alumnos</a>
+	</form>
+	
+
+</body>
+</html>
