@@ -28,7 +28,11 @@
 		<input type="submit" value="Agregar Alumno"/>
 		<a href="/listado" type="buttom">Listado de Alumnos</a>
 	</form>
-	
+	<br>
+	<form th:action="@{/borrarEstudiante}" method="post">
+		<label>Borrar estudiante por codigo</label><input type="number" name="codigo"><br>
+    	<input type="submit" value="Borrar">
+	</form>
 
 </body>
 </html>
